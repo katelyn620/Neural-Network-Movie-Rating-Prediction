@@ -48,16 +48,16 @@ For each batch:
 
 ## Results
 ### Baseline Collaborative Filtering Model
-<u>Training Loss (5 Epochs):</u> <br>
+<b>Training Loss (5 Epochs):</b> <br>
 Epoch 1: 1.7323 <br>
 Epoch 2: 1.0088 <br>
 Epoch 3: 0.9278 <br>
 Epoch 4: 0.8848 <br>
 Epoch 5: 0.8559 <br>
 
-<u>Final Test Loss:</u> 0.9635
+<b>Final Test Loss:</b> 0.9635
 
-<u>Sample Predictions:</u> <br>
+<b>Sample Predictions:</b> <br>
 Actual: 1.0, Predicted: 3.38 <br>
 Actual: 2.0, Predicted: 2.98 <br>
 Actual: 3.0, Predicted: 3.94 <br>
