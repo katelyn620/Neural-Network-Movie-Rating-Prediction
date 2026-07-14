@@ -1,2 +1,112 @@
-# Neural-Network-Movie-Rating-Prediction
-A deep learning-based movie recommendation system built with PyTorch using the MovieLens 100K dataset. This project uses Neural Collaborative Filtering with learned user and movie embeddings to predict movie ratings and generate personalized recommendations
+# Neural Network Movie Rating Prediction
+## Project Overview
+A deep learning-based movie recommendation system built with PyTorch using the MovieLens 100K dataset. The project uses Neural Collaborative Filtering with learned user and movie embeddings to predict movie ratings and generate personalized recommendations.
+
+Instead of utilizing similarity metrics or matrix factorization techniques, a neural network is trained to learn latent representations/embeddings for users and movies directly from rating data. The model predicts how a user would rate a movie and uses those predictions to recommend movies the user hasn't seen yet. The recommendation system scores unseen movies and recommends the highest-rated candidates.
+
+## Dataset
+MovieLens 100K Dataset<br>
+Source: https://grouplens.org/datasets/movielens/
+
+Dataset Statistics:
+- 100,000 ratings
+- 943 users
+- 1,682 movies
+- Ratings from 1 to 5 stars
+
+## Technologies Used
+- Python
+- PyTorch
+- Pandas
+- NumPy
+- Scikit-Learn
+- Matplotlib
+
+## Model Architecture
+### Baseline Model: Neural Collaborative Filtering
+<img width="484" height="1106" alt="Neural Network Movie Rating Prediction" src="https://github.com/user-attachments/assets/edc7a14b-5d6d-4203-a807-095120a4f23b" />
+
+### Embeddings
+The model learns:
+- A 50-dimensional embedding for each user
+- A 50-dimensional embedding for each movie
+These embeddings capture latent user preferences and movie characteristics directly from the rating data.
+
+## Training Process
+### Loss Function
+Mean Squared Error (MSE)
+
+### Optimizer
+Adam Optimizer
+
+### Training Loop
+For each batch:
+1. Generate predictions
+2. Compute loss
+3. Perform backpropagation
+4. Update model weights
+
+## Results
+### Baseline Collaborative Filtering Model
+<u>Training Loss (5 Epochs):</u> <br>
+Epoch 1: 1.7323 <br>
+Epoch 2: 1.0088 <br>
+Epoch 3: 0.9278 <br>
+Epoch 4: 0.8848 <br>
+Epoch 5: 0.8559 <br>
+
+<u>Final Test Loss:</u> 0.9635
+
+<u>Sample Predictions:</u> <br>
+Actual: 1.0, Predicted: 3.38 <br>
+Actual: 2.0, Predicted: 2.98 <br>
+Actual: 3.0, Predicted: 3.94 <br>
+Actual: 4.0, Predicted: 4.07 <br>
+Actual: 4.0, Predicted: 4.10 <br>
+
+## Generating Recommendations
+After training, the model:
+1. Identifies movies a user has not rated
+2. Predicts ratings for those movies
+3. Returns the highest-scoring candidates
+
+## Embedding Visualization
+Movie embeddings were projected from 50 dimensions to 2 dimensions using t-SNE. This visualization shows inspection of how the network organizes movies within the learned embedding space.
+
+Insights:
+- Some highly-rated classic films clustered together
+- Similarity patterns emerged from user behavior rather than explicit genre labels
+- Learned representations didn't always align with assumptions about movie similarity
+
+## Hybrid Recommendation Model
+As an experiment, movie genre information was incorporated into the model.
+
+Updated architecture:
+<img width="692" height="1104" alt="Neural Network Movie Rating Prediction (1)" src="https://github.com/user-attachments/assets/9be84b21-6148-4018-8c40-879238437503" />
+
+## Experiment Results
+### Hypothesis
+Adding movie genre information would improve recommendation quality and test performance
+
+### Results
+| Model | Test Loss |
+|--------|-----------|
+| Baseline Collaborative Filtering | 0.9635 |
+| Hybrid Recommender + Genres | 0.9398 |
+
+### Conclusion
+Adding genre information provided little to no improvement. 
+
+The learned user and movie embeddings appeared to capture much of the useful information already present in the dataset.
+
+## Overfitting Analysis
+The hybrid model was trained for 20 epochs to evaluate the effect of longer training.
+
+Results:
+Training Loss: 0.8459 -> 0.5470
+Test Loss: 0.9398 -> 1.0744
+
+Although training performance significantly improved, test performance degraded. This demonstrates overfitting, where the model memorizes training data instead of learning patterns that generalize to unseen examples.
+
+### Key Takeaways
+Lower training loss doesn't necessarily mean a better model. Evaluation on held-out test data is critical.
