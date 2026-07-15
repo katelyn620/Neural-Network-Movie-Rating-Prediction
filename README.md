@@ -49,20 +49,20 @@ For each batch:
 ## Results
 ### Baseline Collaborative Filtering Model
 <b>Training Loss (5 Epochs):</b> <br>
-Epoch 1: 1.7323 <br>
-Epoch 2: 1.0088 <br>
-Epoch 3: 0.9278 <br>
-Epoch 4: 0.8848 <br>
-Epoch 5: 0.8559 <br>
+Epoch 1: 1.6571 <br>
+Epoch 2: 1.0009 <br>
+Epoch 3: 0.9250 <br>
+Epoch 4: 0.8827 <br>
+Epoch 5: 0.8549 <br>
 
-<b>Final Test Loss:</b> 0.9635
+<b>Final Test Loss:</b> 0.9481
 
 <b>Sample Predictions:</b> <br>
-Actual: 1.0, Predicted: 3.38 <br>
-Actual: 2.0, Predicted: 2.98 <br>
-Actual: 3.0, Predicted: 3.94 <br>
-Actual: 4.0, Predicted: 4.07 <br>
-Actual: 4.0, Predicted: 4.10 <br>
+Actual: 1.0, Predicted: 2.82 <br>
+Actual: 2.0, Predicted: 2.95 <br>
+Actual: 3.0, Predicted: 3.57 <br>
+Actual: 4.0, Predicted: 3.96 <br>
+Actual: 4.0, Predicted: 3.93 <br>
 
 ## Generating Recommendations
 After training, the model:
@@ -91,8 +91,8 @@ Adding movie genre information would improve recommendation quality and test per
 ### Results
 | Model | Test Loss |
 |--------|-----------|
-| Baseline Collaborative Filtering | 0.9635 |
-| Hybrid Recommender + Genres | 0.9398 |
+| Baseline Collaborative Filtering | 0.9481 |
+| Hybrid Recommender + Genres | 0.9450 |
 
 ### Conclusion
 Adding genre information provided little to no improvement. 
@@ -103,8 +103,8 @@ The learned user and movie embeddings appeared to capture much of the useful inf
 The hybrid model was trained for 20 epochs to evaluate the effect of longer training.
 
 Results:
-Training Loss: 0.8459 -> 0.5470
-Test Loss: 0.9398 -> 1.0744
+Training Loss: 0.8463 -> 0.5505
+Test Loss: 0.9431 -> 1.0808
 
 Although training performance significantly improved, test performance degraded. This demonstrates overfitting, where the model memorizes training data instead of learning patterns that generalize to unseen examples.
 
