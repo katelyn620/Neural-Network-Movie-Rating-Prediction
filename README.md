@@ -2,7 +2,7 @@
 ## Project Overview
 A deep learning-based movie recommendation system built with PyTorch using the MovieLens 100K dataset. The project uses Neural Collaborative Filtering with learned user and movie embeddings to predict movie ratings and generate personalized recommendations.
 
-Instead of utilizing similarity metrics or matrix factorization techniques, a neural network is trained to learn latent representations/embeddings for users and movies directly from rating data. The model predicts how a user would rate a movie and uses those predictions to recommend movies the user hasn't seen yet. The recommendation system scores unseen movies and recommends the highest-rated candidates.
+Instead of utilizing similarity metrics or matrix factorization techniques, a neural network is trained to learn underlying representations/embeddings for users and movies directly from rating data. The model predicts how a user would rate a movie and uses those predictions to recommend movies the user hasn't seen yet. The recommendation system scores unseen movies and recommends the highest-rated candidates.
 
 ## Dataset
 MovieLens 100K Dataset<br>
