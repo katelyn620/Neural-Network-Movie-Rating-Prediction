@@ -92,7 +92,7 @@ Adding movie genre information would improve recommendation quality and test per
 | Model | Test Loss |
 |--------|-----------|
 | Baseline Collaborative Filtering | 0.9481 |
-| Hybrid Recommender + Genres | 0.9450 |
+| Hybrid Recommender + Genres | 0.9431 |
 
 ### Conclusion
 Adding genre information provided little to no improvement. 
@@ -102,9 +102,9 @@ The learned user and movie embeddings appeared to capture much of the useful inf
 ## Overfitting Analysis
 The hybrid model was trained for 20 epochs to evaluate the effect of longer training.
 
-Results:
-Training Loss: 0.8463 -> 0.5505
-Test Loss: 0.9431 -> 1.0808
+Results:<br>
+Training Loss: 0.8463 -> 0.5505<br>
+Test Loss: 0.9431 -> 1.0808<br>
 
 Although training performance significantly improved, test performance degraded. This demonstrates overfitting, where the model memorizes training data instead of learning patterns that generalize to unseen examples.
 
