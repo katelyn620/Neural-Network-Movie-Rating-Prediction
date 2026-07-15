@@ -79,9 +79,8 @@ Insights:
 - Learned representations didn't always align with assumptions about movie similarity
 
 ## Hybrid Recommendation Model
-As an experiment, movie genre information was incorporated into the model.
-
-Updated architecture:
+As an experiment, movie genre information was incorporated into the model.<br>
+Updated architecture:<br>
 <img width="692" height="1104" alt="Neural Network Movie Rating Prediction (1)" src="https://github.com/user-attachments/assets/9be84b21-6148-4018-8c40-879238437503" />
 
 ## Experiment Results
